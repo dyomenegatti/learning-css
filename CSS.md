@@ -26,6 +26,14 @@
             }
         ```
 
+## Diferença entre inline, interno e externo
+
+* **Interno**: Ocorre dentro da tag ```<head``` no HTML, dentro de uma tag ```<style type="text/css">```
+    * Vantagens/desvantagens: Os seletores de ID podem ser usados por stylesheet interno, não há necessidade de carregar vários arquivos; mas aumenta o tamanho do código HTML, aumentando também no tempo de carregamento. 
+* **Externo**: É utilizado um arquivo externo ao HTML, chamado de ```style.css```(ou outro nome), que será apenas para o CSS e é chamado no ```<head>``` do HTML através da tag ```<link rel="stylesheet" type="text/css" href="style.css">```
+    * Vantagens/desvantagens: Estrutura de código mais limpa, o arquivo CSS pode ser usado para outras páginas HTML; mas o processamento pode demorar um pouco mais.
+* **Inline**: Usado dentro de um tag HTML, a partir da propriedade ```style```, seria como ```<h1 style="color:white;padding:30px;">Teste</h1>```
+    * Vantagens/desvantagens: Fácil e rápido inserção, não é necessário arquivos externos; mas consome muito tempo e deixa a estrutura HTML bagunçada.
 ## Tipos de seletores
 
 * Seletor da tag: ```<p>```
@@ -33,10 +41,56 @@
 * Seletor de classe: ```.my-class```
 * Seletor de atributo: ```img[src]```
 * Seletor de pseudoclasse: ```a:hover```
+* Seleciona somente o elemento imediamente após o primeiro: ```+```
+* Seleciona somente os filhos diretos: ```>```
+* Seleciona todos os próximos após o primeiro: ```~```
+* Exclui determinados elementos de receber a regra: ``` not```
 
+* A **especificidade de um seletor** é o poder de escolha, no qual ajuda os navegadores a decidir o valor da propriedade que terá precedência. Feito através:
+    * Id > class
+    * Css inline > que outros seletores
+    * Cálculo de seletor > que qualquer outro.
 ## CSS: boxes
 
 * O layout CSS é baseado no _modelo de caixa_. Cada caixa com propriedades como:
     * ```padding```: Espaço ao redor do conteúdo. 
     * ```border```: Linha sólida fora do preenchimento. 
     * ```margin```: Espaço ao redor do lado de fora da borda.
+## Pseudo-elementos
+
+* Permite que sejam estilizado uma parte específica do elemento selecionado.
+    * ```::``` define um pseudo-elemento
+    * ```::after```: Cria um falso elemento que permite adicionar conteúdo **após** o elemento selecionado.
+    * ```::before```: Cria um falso elemento que permite adicionar conteúdo **antes** do conteúdo do elemento selecionado.
+    * ```::first-letter```: Customiza a primeira letra do conteúdo de um elemento.
+    * ```first-line```: Customiza o conteúdo da primeira linha do elemento. 
+    * ```::selection```: Utilizado para selecionar o conteúdo de um elemento e, a partir disso, customizar algumas propriedades dessa área. 
+
+## Pseudo-classes
+
+* Usada para definir um estado especial de um elemento. Pode ser usado para: _estilizar um elemento quando um usuário passa o mouse sobre ele, estilizar links visitados e não visitados, estilizar um elemento quando recebe foco_ entre outros. 
+    * ```:``` define uma pseudo-classe
+    * ```a:link```: link visitado.
+    * ```a:visited```: link visitado.
+    * ```a:hover```: mouse por cima. 
+    * ```a:active```: link selecionado. 
+    * ```:focus```: elemento ganha foco. 
+## Diferença entre **px**, **em** e **rem**?
+
+* ```px```: Unidade absoluta e não escalável. A mudança do seu valor não afeta outros valores de unidades absolutas, ou seja, o valor do pixel continua imutável mesmo após configurações do usuário. 
+    * Usar em ajustes finos, ou pequenas margens, espessuras de uma borda, ajuste fino na hora de posicionar um elemento com posicionamento absoluto. 
+* ```rem```: Unidade escalável e relativa, ele varia de acordo com a dimensão root do navegador (por padrão é de 16px), na maior parte das vezes 1rem = 16px. Relativo ao tamanho da fonte do elemento raiz, ou seja, relativo ao ```font-size``` declaro no elemento HTML.
+* ```em```: Unidado dinâmica, porém sua referência não é o valor raiz do navegador, e sim o valor calculado da propriedade font-size do elemento no qual ela é usada. É relativo a fonte do elemento pai - a fonte será 2x a fonte do elemento pai. 
+    * Ótima opção para preenchimentos, alturas de linhas e margens. 
+
+## Floats
+
+* Determina que um elemento deve ser retirado do seu fluxo normal e colocado à esquerda ou diretia do container, onde os textos e elementos em linha irão se posicionar ao seu redor. 
+* Floats são utilizados para posicionar uma imagem ao lado de um bloco de texto, criar layouts para web e layouts de pequenas instâncias.
+
+**Problemas:**
+* Floats são _frágeis_; são cheios de contratempos e cross-browser quirks. 
+* Para isso existe a necessidade de "limpar" floats (propriedade _clear_). Exemplos:
+    * Arumar o float para ajustar a altura do elemento pai
+    * Limpar o float para começar uma nova linha
+    * Dando clear somente à esqueda ou à direita 
