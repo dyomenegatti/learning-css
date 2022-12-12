@@ -94,3 +94,13 @@
     * Arumar o float para ajustar a altura do elemento pai
     * Limpar o float para começar uma nova linha
     * Dando clear somente à esqueda ou à direita 
+
+## Position
+
+* Define como um elemento qualquer pode ser posicionado no documento da página.
+* Acompanhada de 4 propriedades: ```top```,  ```bottom```, ```right``` e ```left``` - elas determinam a localização final do objeto/deslocar o objeto conforme for especificado.
+    * ```position: static```: Padrão para todos os elementos;
+    * ```position: fixed```: O elemento fica fixo na página independente do scroll, isso acontece porque ele fica fixo em relação a viewport;
+    * ```position: relative```: Está posicionado em relação a sua posição normal, em relação a ele mesmo;
+    * ```position: absolute```: Será posicionado em relação a o elemento mais próximo dele que tenha um ```position: relative```;
+    * ```position: sticky```: Fixo em relação ao scroll do usuário, como se fosse um adesivo ele fica fixo quando 'chega' no scroll dele.

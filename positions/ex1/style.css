@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 300vh;
+}
+
+.container {
+  /*position: sticky;
+  top: 0;
+  left: 200px;*/
+  position: relative;
+  margin-top: 20vh;
+  width: 400px;
+  height: 400px;
+  background: blue;
+}
+
+.box {
+  /*position: fixed;
+  top: 50px;
+  left: 100px;*/
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 200px;
+  height: 200px;
+  background: orangered;
+}
