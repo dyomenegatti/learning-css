@@ -104,3 +104,26 @@
     * ```position: relative```: Está posicionado em relação a sua posição normal, em relação a ele mesmo;
     * ```position: absolute```: Será posicionado em relação a o elemento mais próximo dele que tenha um ```position: relative```;
     * ```position: sticky```: Fixo em relação ao scroll do usuário, como se fosse um adesivo ele fica fixo quando 'chega' no scroll dele.
+
+## Box Model
+
+* O modelo básico de um elemento é em _caixas_, e a posição e propriedades (como cor, plano de fundo, tamanho de borda, etc) são definidas atráves do CSS. 
+* Cada caixa é composta por quatro partes:
+
+**Content area**
+* Contém o conteúdo do elemento (como imagem, texto etc).
+* Se a ```box-sizing``` é definida como ```content-box```(padrão) e se o elemento for um elemento de bloco, o tamanho da área de conteúdo poderá ser explicitamente definido com as propriedades: ```width```, ```min-width```, ```max-width```, ```height```, ```min-height``` e ```max-height```.
+
+**Padding area**
+* Define a área de preenchimento interno de um elemento box. 
+* A espessura do preechimento é determinada pelas propriedades ```padding-top```, ```padding-right```, ```padding-bottom```, ```padding-left``` e abreviadas ```padding```.
+
+**Border area**
+* Estende a área de preenchimento para incluir bordas do elemento. 
+* A espessura das bordas é determinada pelas propriedades ```border-widht``` abreviadas e ```border```. 
+* Se a ```box-sizing``` propriedade for definida como ```border-box```, o tamanho da área da borda poderá ser explicitamente definido com as propriedades ```width```, ```min-width```, ```max-width```, ```height```, ```min-height``` e ```max-height```. 
+
+**Margin area**
+* Define a área de preenchimento externo de um elemento box. 
+* O tamanho da área de margem é determinado pelas propriedades ```margin-top```, ```margin-right```, ```margin-left``` e ```margin-bottom```. 
+
