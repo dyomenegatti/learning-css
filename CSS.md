@@ -127,3 +127,61 @@
 * Define a área de preenchimento externo de um elemento box. 
 * O tamanho da área de margem é determinado pelas propriedades ```margin-top```, ```margin-right```, ```margin-left``` e ```margin-bottom```. 
 
+## Flexbox
+
+* Modelo de layout unidimensional, ou seja, lida apenas com uma dimensão por vez, seja como uma linha ou como uma coluna. 
+
+**Os dois eixos do flexbobx**
+* O flexbox possui dois eixos para lidar com o layout:
+* **Eixo Principal**: Definido pela propriedade ```flex-direction```, e possui quatro valores sendo: ```row```, ```row-reverse```, ```column``` e ```column-reverse```.
+    * ```row``` e ```row-reverse``` executa o eixo principal na direção de **linha/inline**.
+    * ```column``` e ```column-reverse``` executa o eixo principal na diretação de **coluna/column**.
+* **Eixo Transversal**:Executado perpendicularmente ao eixo principal. 
+    * Se o ```flex-direction``` estiver definido como ```row``` ou ```row-reverse```, o eixo transversal será executado em **colunas**.
+    * Se o ```flex-direction``` estiver definido como ```column``` ou ```column-reverse```, o eixo transversal será executado em **linhas**.
+
+**Flex Container**
+* A área do documento disposta usando flexbobx é chamada de _flex container_. 
+* Para criar um flex container, é necessário definir o valor da ```display``` como ```flex``` ou ```inline-flex```. 
+* Assim que for definido, os filhos diretos desse container se tornam _flex itens_, que vão se comportar da seguinte maneira:
+    * O ```flex-direction``` padrão é ```row```.
+    * Os itens começam na borda inicial do eixo principal.
+    * Os itens não se estendem na dimensão principal, mas podem encolher.
+    * Os itens serão esticados para preencher o tamanho do eixo transversal.
+    * A ```flex-basis``` propriedade está definida como ```auto```.
+    * A ```flex-wrap``` propriedade está definida como ```nowrap```.
+    * _Resumindo_: Os itens serão alinhados em linha, usando o tamanho do conteúdo como seu tamanho no eixo principal. Se houver mais itens do que cabem, eles transbordarão. Se alguns itens forem mais altos que outros, todos os itens se estenderão ao longo do eixo transversal para preencher seu tamanho total. 
+
+**Propriedades do flexbox**
+* ```flex-direction```: Altera a direção de exibição dos elementos;
+    * ```row```(padrão): Organiza os itens em linha (da esquerda para a direita).
+    * ```row-reverse```: Organiza os itens em linha (da direita para a esquerda)
+    * ```column```: Organiza os itens em colunas (de cima para baixo).
+    * ```column-reverse```: Organiza os itens em colunas (de baixo para cima).
+* ```flex-wrap```: Organiza os itens de forma que possa ocorrer "quebra de linha".
+    * ```nowrap```(padrão): Todos os itens serão dispostos em uma linha.
+    * ```wrap```: Permite a quebra de linhas (linha de baixo).
+    * ```wrap-reverse```: Permite a quebra de linha (linha de cima).
+* ```flex-flow```: Forma abreviada para a escrita das propriedades ```flex-direction``` e ```flex-wrap```. 
+
+* ```justify-content```: Define o alinhamento dos itens ao longo do eixo principal do container. 
+    * ```flex-start```(padrão), ```flex-end```, ```center```, ```space-between``` e ```space-around```.
+* ```align-content```: Define como as linhas são distribuídas ao longo do eixo transversal do container. Terá efeito se tiver elementos suficiente para quebrar a linha e a propriedade. 
+    * ```stretch```(padrão): As linhas são distribuídas uniformemente ao longo do eixo transversal, ocupando todo o espaço disponível;
+    * ```flex-start```, ```flex-end```, ```center```, ```space-between``` e ```space-around```.
+* ```align-items```: Define como os itens são distribuídos ao longo do eixo transversal do container. 
+    * ```stretch```(padrão): Os itens serão esticados para preencher toda a dimensão do eixo transversal (altura/largura).
+    * ```baseline```: Os itens são alinhados a partir da base da primeira linha de texto de cada um.
+    * ```flex-start```, ```flex-end``` e ```center```.
+* ```order```: Altera a ordem de exibição dos itens.
+* ```flex-grow```: Define a proporção com que um item deve crescer caso seja necessário. 
+* ```flex-shrink```: Define a proporção com que um item deve encolher caso seja necessário.
+* ```flex-basis```: Define o tamanho inicial que um item deve ter antes que o espaço ao seu redor seja distribuído. Ou seja, dependendo da direção do eixo principal, essa propriedade define a largura ou altura mínima do elemento antes que ele seja redimensionado por outras propriedades.
+* ```flex```: Forma abreviada para a escrita das propriedades ```flex-grow```, ```flex-shirink``` e ```flex-basis```.
+* ```align-self```: Permite sobrescrever no item o comportamento que foi definido pela propriedade align-items. 
+    * ```auto```(padrão): Respeita o comportamento definido no container por meio do align-items.
+    * ```stretch```, ```flex-start```, ```flex-end```, ```center``` e ```baseline```.
+
+* _Observação_:  
+* A propriedade ```justify``` está relacionada ao eixo principal.
+* A propriedade ```align``` está relacionada ao eixo transversal.
