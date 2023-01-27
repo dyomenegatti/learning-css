@@ -185,3 +185,68 @@
 * _Observação_:  
 * A propriedade ```justify``` está relacionada ao eixo principal.
 * A propriedade ```align``` está relacionada ao eixo transversal.
+
+## Grid
+
+* Modelo de layout bidimensional, ou seja, lida com duas dimensões *linhas e colunas*.
+
+**Propriedades**
+* Container
+    * ```display: grid```: Define que o layout será em grade.
+    * ```grid-template-columns```: Fatia o layout em colunas.
+    * ```grid-template-rows```: Fatia o layout em linhas.
+    * ```grid-gap```: Define os espaçamentos.
+        * ```grid-row-gap```
+        * ```grid-column-gap```
+    * ```grip-template-areas```: Delimita as áreas.
+
+* Itens
+    * ```grid-column```: Define onde estará as colunas do layout.
+        * ```grid-column-start```
+        * ```grid-column-end```
+    * ```grid-row```: Define onde estará as linhas do layout.
+        * ```grid-row-start```
+        * ```grid-row-end```
+    * ```grid-area```: Define a área de grades.
+
+**Alinhamento**
+* ```justify-content```
+* ```align-content```
+* ```justify-items```
+* ```align-items```
+* ```justify-self```
+* ```align-self```
+
+* Sabendo que o grid é bidimensional, nós temos o eixo x e o y. 
+  * O *eixo x* é o posicionamento horizontal, da esquerda para a direita. 
+  * O *eixo y* é o posicionamento vertical, de cima para baixo. 
+
+* **Content, Itens e Self**
+  * Justando o ```justify```, ou ```align```, com esses elementos: ```content```, ```itens``` e ```self```, nós observamos nossas propriedades. 
+  * **Content**
+    * ```justify-content``` e ```align-content``` nos permite alinhar o próprio grid, relativo ao espaço fora do grid. 
+    * O uso dessas propriedades são raras, pois só é aplicado caso o grid seja menor que a área definida. (Por exemplo, quando usamos em px o tamanho do grid, podemos terminar com um grid pequeno, para o tamanho da área do grid)
+    * 7 valores: ```start```, ```end```, ```center```, ```stretch```, ```space-between```, ```space-around``` e ```space-evenly```
+  * **Itens**
+    * ```justify-items``` e ```align-items``` vai permitir alinhar os items do nosso grid, em qualquer espaço disponível, na célula que ele habitar. 
+    * 4 valores: ```start```, ```end```, ```center``` e ```strech```
+  * **Self**
+    * ```justify-self``` e ```align-self``` vai nos permitir alinhar o item em si.
+    * Faz a mesma coisa que o ```justify-items``` e ```align-items```, porém, aplicado diretamente no item de um grid.
+
+## Grid ou Flexbox?
+
+* **Flexbox**: 
+  * Uma dimensão (ou linha, ou coluna)
+  * A partir do conteúdo
+  * Distribuição de espaços
+  * Para porções de layout
+  * Elementos de UI
+* **Grid**: 
+  * Duas dimensões (linhas e colunas)
+  * A partir da definição da grid
+  * Ocupação de espaços pré-definidos
+  * Para layouts completos
+  * Layouts mais abrangentes
+  * Requer menos media queries
+* Um complementa o trabalho do outro
